@@ -13,13 +13,18 @@ import (
 // importCmd represents the import command
 var importCmd = &cobra.Command{
 	Use:   "import",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "import iterates over 100 int values and print the values based on the flag type",
+	Long: `
+		Import is a command which iterates over 100 int values and print them based on the provided flags.
+		In default case it prints the message '100 lines was processed'. The import command has help and verbose flag.
+		If we specify -h or --help flag it would print this magic message.
+		With verbose command we are printing every 10 lines processed during the iteration of 100 int values. The message
+		which is displayed is 'i%10 lines was processed'
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+		Flags:
+			-h or --help => prints this magic message
+			-v or --verbose => prints a log message after every 10 lines was processed
+	`,
 	ValidArgs: []string{internal.Verbose, internal.Help},
 	Run: func(cmd *cobra.Command, args []string) {
 		verbose, _ := cmd.Flags().GetBool(internal.Verbose)
