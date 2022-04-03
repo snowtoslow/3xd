@@ -20,6 +20,7 @@ var rootCmd = &cobra.Command{
 	Use:   "3xd",
 	Short: "3xd small cli application",
 	Long: `3xd is a CLI	 application with functionality of printing logs during the process of iterating over 100 number.
+		Created using cobra-cli tool
 		It ha 2 base commands:
 			1. import 
 			2. sync
